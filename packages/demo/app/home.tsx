@@ -4,12 +4,15 @@
 import { ccc } from "@ckb-ccc/connector-react";
 import React, { ReactNode, useEffect, useState } from "react";
 import { common } from "@ckb-lumos/common-scripts";
-import { TransactionSkeleton } from "@ckb-lumos/helpers";
+import { Cell, CellDep, Script, config } from "@ckb-lumos/lumos"
+import { bytes, BytesLike, Uint128 } from "@ckb-lumos/lumos/codec"
+import { TransactionSkeleton, addressToScript } from "@ckb-lumos/helpers";
 import { Indexer } from "@ckb-lumos/ckb-indexer";
-import { predefined } from "@ckb-lumos/config-manager";
+import { ScriptConfig, predefined } from "@ckb-lumos/config-manager";
 import { registerCustomLockScriptInfos } from "@ckb-lumos/common-scripts/lib/common";
 import { generateDefaultScriptInfos } from "@ckb-ccc/lumos-patches";
 import Link from "next/link";
+import { addCellDep } from "@ckb-lumos/lumos/helpers";
 
 function WalletIcon({
   wallet,
@@ -183,23 +186,97 @@ function Transfer() {
             const tx = ccc.Transaction.fromLumosSkeleton(txSkeleton);
 
             // CCC transactions are easy to be edited
-            const dataBytes = (() => {
-              try {
-                return ccc.bytesFrom(data);
-              } catch (e) {}
+            // const dataBytes = (() => {
+            //   try {
+            //     return ccc.bytesFrom(data);
+            //   } catch (e) {}
 
-              return ccc.bytesFrom(data, "utf8");
-            })();
-            if (tx.outputs[0].capacity < ccc.fixedPointFrom(dataBytes.length)) {
-              throw new Error("Insufficient capacity to store data");
-            }
-            tx.outputsData[0] = ccc.hexFrom(dataBytes);
+            //   return ccc.bytesFrom(data, "utf8");
+            // })();
+            // if (tx.outputs[0].capacity < ccc.fixedPointFrom(dataBytes.length)) {
+            //   throw new Error("Insufficient capacity to store data");
+            // }
+            // tx.outputsData[0] = ccc.hexFrom(dataBytes);
 
             // Sign and send the transaction
             setHash(await signer.sendTransaction(tx));
           }}
         >
           Transfer
+        </Button>
+        <Button
+          className="mt-1"
+          onClick={async () => {
+            if (!signer) {
+              return;
+            }
+            const { XUDT } = config.TESTNET.SCRIPTS
+            // a helper to create a Script from a ScriptConfig
+            function createScript(config: ScriptConfig, args: BytesLike): Script {
+              return { codeHash: config.CODE_HASH, hashType: config.HASH_TYPE, args: bytes.hexify(args) }
+            }
+            function createCellDep(config: ScriptConfig): CellDep {
+              return { depType: config.DEP_TYPE, outPoint: { txHash: config.TX_HASH, index: config.INDEX } }
+            }
+            // Verify destination address
+            await ccc.Address.fromString(transferTo, signer.client);
+            const fromAddresses = await signer.getAddresses();
+            const ownerLockScript = addressToScript(fromAddresses[0], { config: config.TESTNET });
+            // === Composing transaction with Lumos ===
+            registerCustomLockScriptInfos(generateDefaultScriptInfos());
+            const indexer = new Indexer(signer.client.url);
+            const xudtTypeScript = createScript(XUDT, '0x27a1ed4bef644d7ff2eb28b7d94875724fbf7b90c9911a866d91f880c148825b')
+            const xudtCollector = indexer.collector({ type: xudtTypeScript, lock: ownerLockScript })
+
+            let transferCell: Cell | undefined
+          
+            for await (const cell of xudtCollector.collect()) {
+              transferCell = cell
+              // Collect only one (assuming you have only one minted xUDT cell).
+              break
+            }
+            console.log(transferCell);
+          
+            if (!transferCell) {
+              throw new Error("Owner do not have an xUDT cell yet, please call mint first")
+            }
+          
+            let txSkeleton = TransactionSkeleton({ cellProvider : indexer })
+          
+            txSkeleton = addCellDep(txSkeleton, createCellDep(XUDT))
+          
+            txSkeleton = await common.setupInputCell(txSkeleton, transferCell, fromAddresses[0], { config: config.TESTNET })
+          
+            const toLock = addressToScript(transferTo, { config: config.TESTNET })
+            // 实际转出的 xUDT cell
+            txSkeleton = txSkeleton.update("outputs", (outputs) =>
+              outputs.update(0, (cell) => ({ ...cell!, cellOutput: { ...cell!.cellOutput, lock: toLock } ,  data: bytes.hexify(Uint128.pack(ccc.fixedPointFrom(amount, 18))), }))
+            )
+            // 找零的 xUDT cell
+            txSkeleton = txSkeleton.update("outputs", (outputs) =>
+              outputs.update(1, (cell) => ({ ...transferCell, data: bytes.hexify(Uint128.pack(ccc.fixedPointFrom('5', 18) - ccc.fixedPointFrom(amount, 18))) }))
+            )
+          
+            txSkeleton = await common.payFeeByFeeRate(
+              txSkeleton,
+              fromAddresses,
+              BigInt(3600),
+              undefined,
+              {
+                config:
+                  signer.client.addressPrefix === "ckb"
+                    ? predefined.LINA
+                    : predefined.AGGRON4,
+              },
+            );
+
+            const tx = ccc.Transaction.fromLumosSkeleton(txSkeleton);
+
+            // Sign and send the transaction
+            setHash(await signer.sendTransaction(tx));
+          }}
+        >
+          Transfer xUDT
         </Button>
       </div>
     </>

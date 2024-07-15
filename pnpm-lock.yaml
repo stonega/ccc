@@ -268,6 +268,9 @@ importers:
 
   packages/demo:
     dependencies:
+      '@ckb-lumos/lumos':
+        specifier: ^0.23.0
+        version: 0.23.0(encoding@0.1.13)
       '@lit/react':
         specifier: ^1.0.5
         version: 1.0.5(@types/react@18.2.79)
@@ -781,6 +784,10 @@ packages:
     resolution: {integrity: sha512-y4v2yNa3IYURcUc+lkFs/4/nV4W0QQeCORtv1IlkgbES0718XB4IMGWvQtSGKAC94A9B4kSHREcyn0d+9lMzew==}
     engines: {node: '>=12.0.0'}
 
+  '@ckb-lumos/ckb-indexer@0.23.0':
+    resolution: {integrity: sha512-yLODLJzvtz4M6W6OJR4iRbBTUGrKReV2dhVePPjbH/HRkRY6f6J6cEM9+qM2I3QABmaCXeAM3hWvnWU9hjalQQ==}
+    engines: {node: '>=12.0.0'}
+
   '@ckb-lumos/codec@0.22.2':
     resolution: {integrity: sha512-P5SyhT2qkJwCwcHF3yMLInE0z3wWHDkqJNbSM2Q9oyu0+9kjMQfexNia3T+atBl2M7ELFzN5WvttojYr6DrCwQ==}
     engines: {node: '>=12.0.0'}
@@ -793,16 +800,44 @@ packages:
     resolution: {integrity: sha512-eSXutpQXqAVh0MorCG8bg+xcMqxhpiJCXgdgfpQAA0q6BkdSGmu4Zn3InFRdeHZam8ap02dadVK7ZOi4ZaUKCg==}
     engines: {node: '>=12.0.0'}
 
+  '@ckb-lumos/common-scripts@0.23.0':
+    resolution: {integrity: sha512-Dwic0Al94afdGNu+TGAMmZiU5OVF/zvXbzhCvNmkFS25t8BxPdFjGEc0MlWBI4ZSEoGRrC0O+BOxjzfl5VxSYg==}
+    engines: {node: '>=12.0.0'}
+
   '@ckb-lumos/config-manager@0.22.2':
     resolution: {integrity: sha512-LJ4p80VrCHh178Ks4wW1rEyHC/JWtZxrFiwHinA9aG6aOm2Z9hbZO0/ZKoS5pLfW0gxP2+ZHA3oMVt0UJhlTKA==}
+    engines: {node: '>=12.0.0'}
+
+  '@ckb-lumos/config-manager@0.23.0':
+    resolution: {integrity: sha512-MvNyzGIJTmIpEf5WJB3TkE4icZyZ2HZhFIfJB2SXDRAC84E02jxENPelCnqRbM1rlFHnxjh/5a/oCi5LcXefag==}
+    engines: {node: '>=12.0.0'}
+
+  '@ckb-lumos/hd@0.23.0':
+    resolution: {integrity: sha512-z7EsR/GeX54hq4ukqwW3nrqLCsYrTWIFAjZLR1Ao8xycqQp0IBjCWZLLjRrZY6krbUQpVOoiKo3NBLpPW36LXg==}
     engines: {node: '>=12.0.0'}
 
   '@ckb-lumos/helpers@0.22.2':
     resolution: {integrity: sha512-6ztXwxsaCuoHjkbclAnfAv9BYl02t+/XxNtl3Et4Sl09xIp9HJ9/vyJouC9JjdQdnfkv1zVGN9tLiKwc6QudaQ==}
     engines: {node: '>=12.0.0'}
 
+  '@ckb-lumos/helpers@0.23.0':
+    resolution: {integrity: sha512-yfD28vSn1BBk8BA+/ivL7pF3rMsx4OPQ+UUJjsQiR1zGdkNR3zhJOecgICeddJGYDTBBDVgwHcuyoekLxQzmGg==}
+    engines: {node: '>=12.0.0'}
+
+  '@ckb-lumos/light-client@0.23.0':
+    resolution: {integrity: sha512-O+dbfubDjl0iODiQ8Q+RVJLfuXYNCN6c0am8xEv4vvazLwfw1y/vn6fG/pFu9Mc1GahZ58y9o6fkUgs8ujH3Mg==}
+    engines: {node: '>=12.0.0'}
+
+  '@ckb-lumos/lumos@0.23.0':
+    resolution: {integrity: sha512-ocsmzgTgevVwyQeQkUZrg4PLJCfX48D5MEBNYTMoGh5b1g0f1iEBHcAgw4WBGOKgMJQmGRmWB5P6tPDZ3OZBwQ==}
+    engines: {node: '>=12.0.0'}
+
   '@ckb-lumos/rpc@0.22.2':
     resolution: {integrity: sha512-c2SX0ooDJO3dV2JOTTQtKZs0k+dHst+NHfbYJ6mYWApcZWx2nG4bQR3CQFMIKnd5CKYP/r2JuaonDkcRH9vmzw==}
+    engines: {node: '>=12.0.0'}
+
+  '@ckb-lumos/rpc@0.23.0':
+    resolution: {integrity: sha512-NEY1Wb2cNMYdHwcZYtd8XZ3CP6WGPd25hcsudoDAFlAt9vjHsPlNiwSS7tcZCZfg1XiJy3taViVgG8pFemgpbA==}
     engines: {node: '>=12.0.0'}
 
   '@ckb-lumos/toolkit@0.22.2':
@@ -811,6 +846,10 @@ packages:
 
   '@ckb-lumos/toolkit@0.23.0':
     resolution: {integrity: sha512-7LTsUFfoNCBWJLgh+V/QFnemjGw+y4mmLeQvubwYuJqIPIhIpwKUuKRzkvVG8snA8xVQSfjSSQOs5m3mKp66Kg==}
+    engines: {node: '>=12.0.0'}
+
+  '@ckb-lumos/transaction-manager@0.23.0':
+    resolution: {integrity: sha512-sfwt2g8JlYxr5jRx5r/UZNffTpkwn3sh4dD2THzKmX0S1CsSgww2D1ZD7yruWwSu05ZLKlDPFVKyJ50tNc3LuQ==}
     engines: {node: '>=12.0.0'}
 
   '@eslint-community/eslint-utils@4.4.0':
@@ -1794,6 +1833,9 @@ packages:
 
   bn.js@4.12.0:
     resolution: {integrity: sha512-c98Bf3tPniI+scsdk237ku1Dc3ujXQTSgyiPUDEOe7tRkhrqridvh8klBv0HCEso1OLOYcHuCv/cS6DNxKH+ZA==}
+
+  bn.js@5.2.1:
+    resolution: {integrity: sha512-eXRvHzWyYPBuB4NBy0cmYQjGitUrtqwbvlzP3G6VFnNRbsZQIxQ10PbKKHt8gZ/HW/D/747aDl+QkDqg3KQLMQ==}
 
   brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -4404,6 +4446,9 @@ packages:
   scheduler@0.23.0:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
 
+  scrypt-js@3.0.1:
+    resolution: {integrity: sha512-cdwTTnqPu0Hyvf5in5asVdZocVDTNRmR7XEcJuIzMjJeSHybHl7vpB66AzwTaIg6CLSbtjcxc8fqcySfnTkccA==}
+
   secp256k1@3.8.0:
     resolution: {integrity: sha512-k5ke5avRZbtl9Tqx/SA7CbY3NF6Ro+Sj9cZxezFzuBlLDmyqPiL8hJJ+EmzD8Ig4LUDByHJ3/iPOVoRixs/hmw==}
     engines: {node: '>=4.0.0'}
@@ -4435,6 +4480,9 @@ packages:
   sha.js@2.4.11:
     resolution: {integrity: sha512-QMEp5B7cftE7APOjk5Y6xgrbWu+WkLVQwk8JNjZ8nKRciZaByEW6MubieAiToS7+dwvrjGhH8jRXz3MVd0AYqQ==}
     hasBin: true
+
+  sha3@2.1.4:
+    resolution: {integrity: sha512-S8cNxbyb0UGUM2VhRD4Poe5N58gJnJsLJ5vC7FYWGUmGhcsj4++WaIOBFVDxlG0W3To6xBuiRh+i0Qp2oNCOtg==}
 
   shallow-clone@3.0.1:
     resolution: {integrity: sha512-/6KqX+GVUdqPuPPd2LxDDxzX6CAbjJehAAOKlNpqqUpAqPM6HeL8f+o3a+JsyGjn2lv0WY8UsTgUJjU9Ok55NA==}
@@ -4901,6 +4949,10 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
+  uuid@8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
+
   uuid@9.0.1:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
     hasBin: true
@@ -5330,6 +5382,18 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
+  '@ckb-lumos/ckb-indexer@0.23.0(encoding@0.1.13)':
+    dependencies:
+      '@ckb-lumos/base': 0.23.0
+      '@ckb-lumos/bi': 0.23.0
+      '@ckb-lumos/codec': 0.23.0
+      '@ckb-lumos/rpc': 0.23.0(encoding@0.1.13)
+      '@ckb-lumos/toolkit': 0.23.0
+      cross-fetch: 3.1.8(encoding@0.1.13)
+      events: 3.3.0
+    transitivePeerDependencies:
+      - encoding
+
   '@ckb-lumos/codec@0.22.2':
     dependencies:
       '@ckb-lumos/bi': 0.22.2
@@ -5353,6 +5417,21 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
+  '@ckb-lumos/common-scripts@0.23.0(encoding@0.1.13)':
+    dependencies:
+      '@ckb-lumos/base': 0.23.0
+      '@ckb-lumos/bi': 0.23.0
+      '@ckb-lumos/codec': 0.23.0
+      '@ckb-lumos/config-manager': 0.23.0(encoding@0.1.13)
+      '@ckb-lumos/helpers': 0.23.0(encoding@0.1.13)
+      '@ckb-lumos/rpc': 0.23.0(encoding@0.1.13)
+      '@ckb-lumos/toolkit': 0.23.0
+      bech32: 2.0.0
+      bs58: 5.0.0
+      immutable: 4.3.5
+    transitivePeerDependencies:
+      - encoding
+
   '@ckb-lumos/config-manager@0.22.2(encoding@0.1.13)':
     dependencies:
       '@ckb-lumos/base': 0.22.2
@@ -5363,6 +5442,27 @@ snapshots:
       deep-freeze-strict: 1.1.1
     transitivePeerDependencies:
       - encoding
+
+  '@ckb-lumos/config-manager@0.23.0(encoding@0.1.13)':
+    dependencies:
+      '@ckb-lumos/base': 0.23.0
+      '@ckb-lumos/bi': 0.23.0
+      '@ckb-lumos/codec': 0.23.0
+      '@ckb-lumos/rpc': 0.23.0(encoding@0.1.13)
+      '@types/deep-freeze-strict': 1.1.2
+      deep-freeze-strict: 1.1.1
+    transitivePeerDependencies:
+      - encoding
+
+  '@ckb-lumos/hd@0.23.0':
+    dependencies:
+      '@ckb-lumos/base': 0.23.0
+      '@ckb-lumos/bi': 0.23.0
+      bn.js: 5.2.1
+      elliptic: 6.5.4
+      scrypt-js: 3.0.1
+      sha3: 2.1.4
+      uuid: 8.3.2
 
   '@ckb-lumos/helpers@0.22.2(encoding@0.1.13)':
     dependencies:
@@ -5376,10 +5476,58 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
+  '@ckb-lumos/helpers@0.23.0(encoding@0.1.13)':
+    dependencies:
+      '@ckb-lumos/base': 0.23.0
+      '@ckb-lumos/bi': 0.23.0
+      '@ckb-lumos/codec': 0.23.0
+      '@ckb-lumos/config-manager': 0.23.0(encoding@0.1.13)
+      '@ckb-lumos/toolkit': 0.23.0
+      bech32: 2.0.0
+      immutable: 4.3.5
+    transitivePeerDependencies:
+      - encoding
+
+  '@ckb-lumos/light-client@0.23.0(encoding@0.1.13)':
+    dependencies:
+      '@ckb-lumos/base': 0.23.0
+      '@ckb-lumos/ckb-indexer': 0.23.0(encoding@0.1.13)
+      '@ckb-lumos/rpc': 0.23.0(encoding@0.1.13)
+      cross-fetch: 3.1.8(encoding@0.1.13)
+      events: 3.3.0
+    transitivePeerDependencies:
+      - encoding
+
+  '@ckb-lumos/lumos@0.23.0(encoding@0.1.13)':
+    dependencies:
+      '@ckb-lumos/base': 0.23.0
+      '@ckb-lumos/bi': 0.23.0
+      '@ckb-lumos/ckb-indexer': 0.23.0(encoding@0.1.13)
+      '@ckb-lumos/codec': 0.23.0
+      '@ckb-lumos/common-scripts': 0.23.0(encoding@0.1.13)
+      '@ckb-lumos/config-manager': 0.23.0(encoding@0.1.13)
+      '@ckb-lumos/hd': 0.23.0
+      '@ckb-lumos/helpers': 0.23.0(encoding@0.1.13)
+      '@ckb-lumos/light-client': 0.23.0(encoding@0.1.13)
+      '@ckb-lumos/rpc': 0.23.0(encoding@0.1.13)
+      '@ckb-lumos/toolkit': 0.23.0
+      '@ckb-lumos/transaction-manager': 0.23.0(encoding@0.1.13)
+    transitivePeerDependencies:
+      - encoding
+
   '@ckb-lumos/rpc@0.22.2(encoding@0.1.13)':
     dependencies:
       '@ckb-lumos/base': 0.22.2
       '@ckb-lumos/bi': 0.22.2
+      abort-controller: 3.0.0
+      cross-fetch: 3.1.8(encoding@0.1.13)
+    transitivePeerDependencies:
+      - encoding
+
+  '@ckb-lumos/rpc@0.23.0(encoding@0.1.13)':
+    dependencies:
+      '@ckb-lumos/base': 0.23.0
+      '@ckb-lumos/bi': 0.23.0
       abort-controller: 3.0.0
       cross-fetch: 3.1.8(encoding@0.1.13)
     transitivePeerDependencies:
@@ -5392,6 +5540,17 @@ snapshots:
   '@ckb-lumos/toolkit@0.23.0':
     dependencies:
       '@ckb-lumos/bi': 0.23.0
+
+  '@ckb-lumos/transaction-manager@0.23.0(encoding@0.1.13)':
+    dependencies:
+      '@ckb-lumos/base': 0.23.0
+      '@ckb-lumos/ckb-indexer': 0.23.0(encoding@0.1.13)
+      '@ckb-lumos/codec': 0.23.0
+      '@ckb-lumos/rpc': 0.23.0(encoding@0.1.13)
+      '@ckb-lumos/toolkit': 0.23.0
+      immutable: 4.3.5
+    transitivePeerDependencies:
+      - encoding
 
   '@eslint-community/eslint-utils@4.4.0(eslint@8.57.0)':
     dependencies:
@@ -6672,6 +6831,8 @@ snapshots:
 
   bn.js@4.12.0: {}
 
+  bn.js@5.2.1: {}
+
   brace-expansion@1.1.11:
     dependencies:
       balanced-match: 1.0.2
@@ -7324,8 +7485,8 @@ snapshots:
       '@typescript-eslint/parser': 7.2.0(eslint@8.57.0)(typescript@5.4.5)
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.0))(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@8.57.0)
       eslint-plugin-react: 7.34.1(eslint@8.57.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@8.57.0)
@@ -7347,13 +7508,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0):
+  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       debug: 4.3.4
       enhanced-resolve: 5.16.0
       eslint: 8.57.0
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.3
       is-core-module: 2.13.1
@@ -7364,18 +7525,18 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-module-utils@2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0):
+  eslint-module-utils@2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
       '@typescript-eslint/parser': 7.2.0(eslint@8.57.0)(typescript@5.4.5)
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0)
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.0))(eslint@8.57.0)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0):
+  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.5
@@ -7385,7 +7546,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
       hasown: 2.0.2
       is-core-module: 2.13.1
       is-glob: 4.0.3
@@ -9876,6 +10037,8 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
 
+  scrypt-js@3.0.1: {}
+
   secp256k1@3.8.0:
     dependencies:
       bindings: 1.5.0
@@ -9917,6 +10080,10 @@ snapshots:
     dependencies:
       inherits: 2.0.4
       safe-buffer: 5.2.1
+
+  sha3@2.1.4:
+    dependencies:
+      buffer: 6.0.3
 
   shallow-clone@3.0.1:
     dependencies:
@@ -10421,6 +10588,8 @@ snapshots:
       punycode: 2.3.1
 
   util-deprecate@1.0.2: {}
+
+  uuid@8.3.2: {}
 
   uuid@9.0.1: {}
 
